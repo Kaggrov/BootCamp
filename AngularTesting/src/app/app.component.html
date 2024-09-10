@@ -1,0 +1,38 @@
+<div class="header">
+Exchange Currency Portal
+
+</div>
+
+<div>
+  <label for="amount" >Enter amount to convert      </label>
+  <input type="text" id="amount" placeholder="Amount in Numerical..." style="margin-left: 10px;" #inp/>
+</div>
+
+<div style="display: flex;flex-direction: row;justify-content: space-between;width: 300px;margin-top: 15px;">
+
+  <div>
+    <label for="from">From</label>
+
+  <select name="from" id="from" #from>
+    <option value="USD">USD</option>
+    <option value="INR">INR</option>
+    <option value="EUR">EUR</option>
+  </select>
+  </div>
+
+ <div>
+  <label for="to">To</label>
+
+  <select name="to" id="to" #to>
+    <option value="USD">USD</option>
+    <option value="INR">INR</option>
+    <option value="EUR">EUR</option>
+  </select>
+ </div>
+
+</div>
+
+
+<button class="btn btn-success" style="margin: 15px;" (click)="convert(from.value,to.value,inp.value)">Convert</button>
+
+<p >{{convertedValue}}</p>

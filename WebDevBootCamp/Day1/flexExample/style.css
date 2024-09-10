@@ -1,0 +1,65 @@
+.header , .footer{
+    background: rgb(238, 185, 38);
+    color: white;
+    text-align: center;
+    padding: 4px;
+}
+
+.headerComponent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: lightgray;
+    gap:10px;
+    padding: 5px;
+}
+.tile{
+    border: 1px solid black;
+    background: whitesmoke;
+    color: rgb(238, 185, 38);
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.tile:hover{
+    background: rgb(228, 189, 62);
+    color: white;
+}
+
+.baseContainer{
+    display: flex;
+    flex-wrap: wrap;
+    background: darkgray;
+    padding: 5px;
+    gap:5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.parentBlock{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    padding: 3px;
+    height:300px;
+    border:1px solid brown;
+    border-radius: 4px;
+}
+
+.button{
+    background: white;
+    color: rgb(204, 167, 46);
+    border: 1px solid black;
+    border-radius: 4px;
+    width:30%;
+    text-align: center;
+}
+
+.text{
+    max-height: 200px;
+    overflow: auto;
+}

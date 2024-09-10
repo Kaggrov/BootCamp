@@ -1,0 +1,15 @@
+<div style="height: 100px;width:100px;text-align: center;" #temp>
+    Message : {{text}}
+</div>
+
+<div style="height: 100px;width:100px;text-align: center;" >
+    Message : <p *ngFor="let item of text">{{item}}</p>
+</div>
+
+<div>
+    <input type="text" placeholder="NgonCheck" #inp1 (keydown)="onCheck(inp1.value)"/>
+</div>
+
+<p #temp1>{{message}}</p>
+<ng-content></ng-content>
+

@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "name": "ABCD",
+      "email": "abcd@gmail.com",
+      "pass": "1122",
+      "accountNo": "11111111111",
+      "mobileNo": "4545123412",
+      "address": "Gurugram",
+      "id": 1,
+      "balance": 11200
+    }
+  ],
+  "orders": [
+    {
+      "name": "Add Money",
+      "amount": "1000",
+      "user": "Self",
+      "id": 1
+    },
+    {
+      "name": "Debit Money",
+      "amount": 600,
+      "user": "Spouse",
+      "id": 2
+    },
+    {
+      "name": "Debit Money",
+      "amount": 600,
+      "user": "Self",
+      "id": 3
+    },
+    {
+      "name": "Add Money",
+      "amount": "2000",
+      "user": "Self",
+      "id": 4
+    },
+    {
+      "name": "Add Money",
+      "amount": "2000",
+      "user": "spouse",
+      "id": 5
+    },
+    {
+      "name": "Add Money",
+      "amount": "2000",
+      "user": "Self",
+      "id": 6
+    },
+    {
+      "name": "Debit Money",
+      "amount": 200,
+      "user": "self",
+      "id": 7
+    },
+    {
+      "name": "Debit Money",
+      "amount": 600,
+      "user": "Self",
+      "id": 8
+    }
+  ]
+}

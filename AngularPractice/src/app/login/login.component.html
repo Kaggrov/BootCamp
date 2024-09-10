@@ -1,0 +1,53 @@
+<main class="form-signin w-100 m-auto" style="text-align: -webkit-center;">
+    <form style="width:30%;margin-top: 20px;" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <img
+        class="mb-4"
+        src="https://www.thoughtco.com/thmb/o8ytjuR8vXInybPA6OQ7SSw-cw0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Blogger.svg-57f268d63df78c690fe5d003.png"
+        alt=""
+        width="72"
+        height="57"
+      />
+      <h1 class="h3 mb-3 fw-normal">Please sign In</h1>
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          formControlName="email"
+        />
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+        <div *ngIf="email?.errors?.['required']" style="color:red">Email is required.</div>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          formControlName="pass"
+        />
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div *ngIf="pass?.invalid && (pass?.dirty || pass?.touched)">
+        <div *ngIf="pass?.errors?.['required']" style="color:red">Password is required.</div>
+      </div>
+  
+      <div class="form-check text-start my-3">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value="remember-me"
+          id="flexCheckDefault"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Remember me
+        </label>
+      </div>
+      <button class="btn btn-primary w-100 py-2" type="submit" [disabled]="loginForm.invalid">Sign In</button>
+      <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
+    </form>
+  </main>
+  

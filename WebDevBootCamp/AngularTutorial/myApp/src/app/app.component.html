@@ -1,0 +1,378 @@
+<div id="root">{{ name }}</div>
+
+<button (click)="fun()">Click Here!!</button>
+
+<div #myName></div>
+<!-- id referencing -->
+<input type="text" (keydown.enter)="printName(myName, $event)" />
+
+<div #Number>{{ value }}</div>
+<button (click)="Increment(Number)">Increment</button>
+<button (click)="Decrement(Number)">Decrement</button>
+
+<h1 *ngIf="show; else myElseBlock">I am if block</h1>
+
+<ng-template #myElseBlock>
+  <h1>I am else block</h1>
+</ng-template>
+
+<!-- Or method 2 -->
+<h1 *ngIf="show; then myIfBlock; else myElseBlock"></h1>
+
+<ng-template #myIfBlock>
+  <h1>I am If block</h1>
+</ng-template>
+
+<ng-template #myElseBlock>
+  <h1>I am else block</h1>
+</ng-template>
+
+<h1 *ngIf="color == 'green'; then green; else red"></h1>
+
+<ng-template #green>
+  <h1 style="color: green">Green color</h1>
+</ng-template>
+
+<ng-template #red>
+  <h1 style="color: red">Red Color</h1>
+</ng-template>
+
+<!-- Switch Case -->
+<div [ngSwitch]="col">
+  <h1 *ngSwitchCase="'blue'" style="color: blue">Blue Color</h1>
+  <h1 *ngSwitchCase="'green'" style="color: green">Green Color</h1>
+  <h1 *ngSwitchCase="'red'" style="color: red">Red Color</h1>
+  <h1 *ngSwitchDefault style="color: black">This is Default</h1>
+</div>
+
+<!-- Style Binding -->
+
+<div
+  [style.background-color]="myBgColor"
+  [style.color]="mycolor"
+  style="height: 100px; width: 100px"
+>
+  I am div
+</div>
+
+<button (click)="changeColor()">Change Color</button>
+
+<!-- Toggle -->
+<div
+  [style.display]="myDisplay"
+  style="height: 100px; width: 100px; background: bisque"
+>
+  I am div
+</div>
+
+<button (click)="changeDisplay()">Hide/Show</button><br />
+
+<!-- 2 way binding model & view  -->
+
+<input type="text" [(ngModel)]="myname" />
+<p>{{ myname }}</p>
+<button (click)="changeName()">Change Name</button><br />
+
+<!-- bootStrap demo -->
+<button class="btn btn-success">Click Here</button>
+
+<!-- Form Model i.e. Template forms-->
+<form #myform="ngForm" (ngSubmit)="userLogin(myform.value)">
+  <input type="text" name="Login" ngModel />
+  <input type="password" name="pass" ngModel />
+  <button class="btn btn-success">Submit</button>
+</form>
+
+<!-- Ng FOr -->
+
+<ul>
+  <li *ngFor="let item of userDetails">
+    {{ item.name }} ------ {{ item.branch }}
+    <ul>
+      <li *ngFor="let ph of item.phone">
+        {{ ph }}
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- ReactiveForms Demo -->
+<!-- <app-reactive-demo></app-reactive-demo> -->
+
+<!-- Pipes Demo -->
+
+<h1>Pipes</h1>
+<p>{{ pipeName | uppercase }}</p>
+<p>Date {{ date | date : "dd/MM/yyyy" }}</p>
+<p>Currency {{ currency | currency : "USD" }}</p>
+<p>Number {{ number | number : ".2" }}</p>
+<p>Custom Pipe {{ 28 | convertToUsd : 90 }}</p>
+<p>{{ 32 | convertToF }}</p>
+<p>{{ 0 | convertToC }}</p>
+
+<!-- Parent to Child  -->
+<app-child-component [item]="childItem"></app-child-component>
+
+
+<!-- Child to Parent -->
+<!-- 1st input box is due to above parent child component so not work as child to parent -->
+
+<app-child-component (newItemEvent)="addItem($event)"></app-child-component>
+<p>{{ parentItem }}</p>
+
+<h2>Mobile Store Application</h2>
+<!-- Parent -Child Communication  -->
+<nav class="navbar" style="background-color: #e3f2fd">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">The Mobile Mania</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<app-radio-component
+  [discount]="productDiscount"
+  (newItemEvent)="filterMobiles($event)"
+></app-radio-component>
+
+<div class="row mt-3 p-4">
+  <div class="col-sm-4" *ngFor="let item of products">
+    <div class="card cardCol mb-3">
+      <img
+        [src]="item.images"
+        class="card-img-top"
+        alt="..."
+        height="200px"
+        width="100px"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <p class="card-text">{{ item.description }}</p>
+        <p class="card-text">{{ item.price }}</p>
+        <p class="card-text">{{ item.rating }}</p>
+        <p class="card-text">{{ item.brand }}</p>
+        <button
+          class="btn btn-primary"
+          (click)="showDiscount(item.discountPercentage, item.price)"
+        >
+          Show discount
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dependency Injection -->
+<h1>Dependency Injection</h1>
+<app-my-header></app-my-header>
+<div
+  style="
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    justify-content: space-between;
+  "
+>
+  <div style="display: flex; justify-content: center; align-items: center">
+    Main Component
+    <img [src]="logo" height="100px" width="100px" />
+  </div>
+  <app-side-bar></app-side-bar>
+</div>
+<app-footer></app-footer>
+
+<!-- Form Validation -->
+
+<!-- Form validation using template driven -->
+<h1>Form Validation Example</h1>
+<!-- <input type="text" id="name" name="name" class="form-control"
+      required minlength="4" appForbiddenName="bob"
+      [(ngModel)]="hero.name" #name="ngModel" style="margin-left: 10px;">
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert" style="margin-bottom: 30px;">
+
+  <div *ngIf="name.errors?.['required']">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors?.['minlength']">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="name.errors?.['forbiddenName']">
+    Name cannot be Bob.
+  </div>
+</div> -->
+
+<!-- Form validation using Validator function in reactive form  -->
+
+<!-- <form [formGroup]="heroForm">
+  <label for="name">Name:</label>
+  <input type="text" id="name" formControlName="name">
+  <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+    <div *ngIf="name.errors.required">Name is required.</div>
+    <div *ngIf="name.errors.minlength">Name must be at least 4 characters long.</div>
+    <div *ngIf="name.errors.forbiddenName">Name cannot contain 'bob'.</div>
+  </div>
+</form> -->
+
+<!-- Routing  -->
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    background: lightgrey;
+    flex-direction: column;
+  "
+>
+  <div style="display: flex; flex-direction: row">
+    <button class="btn btn-success" style="width: 100px">
+      <a routerLink="home">Home</a>
+    </button>
+    <button class="btn btn-success" style="width: 100px">
+      <a routerLink="about">About</a>
+    </button>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Routing application  -->
+<h1>Routing Application demo</h1>
+<nav class="navbar" style="background-color: #e3f2fd">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">The News channel</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="row mt-3 p-4">
+  <div
+    class="col-sm-4"
+    routerLink="hindi"
+    style="cursor: pointer"
+    *ngIf="selectedDiv === '' || selectedDiv === 'hindi'"
+    (click)="changeDiv('hindi')"
+  >
+    <div class="card mb-3" style="height: 300px">
+      <img
+        src="https://rosemounts.org/wp-content/uploads/2023/08/Learning-Hindi-at-Rosemounts-Institute-in-Dehradun.jpg"
+        class="card-img-top"
+        alt="..."
+        height="200px"
+        width="100px"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Language</h5>
+        <p class="card-text">Hindi</p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="col-sm-4"
+    routerLink="kids"
+    style="cursor: pointer"
+    *ngIf="selectedDiv === '' || selectedDiv === 'kids'"
+    (click)="changeDiv('kids')"
+  >
+    <div class="card mb-3" style="height: 300px">
+      <img
+        src="https://www.verywellfamily.com/thmb/mG91K6HPQvzF_ttyUjGR9J0EaXc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/partying-like-rockstars----505657693-5a8ca63bd8fdd50037716c11.jpg"
+        class="card-img-top"
+        alt="..."
+        height="200px"
+        width="100px"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Section</h5>
+        <p class="card-text">Kids</p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="col-sm-4"
+    routerLink="action"
+    style="cursor: pointer"
+    *ngIf="selectedDiv === '' || selectedDiv === 'action'"
+    (click)="changeDiv('action')"
+  >
+    <div class="card mb-3" style="height: 300px">
+      <img
+        src="https://www.syfy.com/sites/syfy/files/2019/05/john-wick-2017-image-3840x2400.jpg"
+        class="card-img-top"
+        alt="..."
+        height="200px"
+        width="100px"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Genre</h5>
+        <p class="card-text">Action</p>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+<br />
+<br />
+<!-- Api Fetching Example  -->
+<button (click)="fetchUsers()">Fetch Api</button>
+<button (click)="addUser()">Post Api</button>
+
+<!-- Life Cycle Methods -->
+<div style="display: flex; flex-direction: row; gap: 20px">
+  <input type="text" #inp />
+  <button (click)="onSubmitInput(inp.value)">Submit</button>
+</div>
+
+<app-life-cycle-child [text]="SubmitText">
+  To Check After Content Hook
+</app-life-cycle-child>
+
+<!-- Routing Guard Example  -->
+<br /><br />
+<input type="text" placeholder="UserName" #usr />
+<br />
+<input type="text" placeholder="Password" #pass />
+<br />
+<button (click)="LoginUser(usr.value, pass.value)">Login</button>
+<button class="btn btn-success" style="width: 200px">
+  <a routerLink="user">User Details</a>
+</button>
+<router-outlet></router-outlet>
+
+<!-- Content Child Example  -->
+<h1>Content Child Example</h1>
+<br />
+<input #input1 /><br />
+<button (click)="showInp(input1.value)">Show</button>
+<app-life-cycle-child [message]="inputValue">
+  <p #temp1>
+    Content Projected :
+    {{ inputValue }}
+  </p>
+</app-life-cycle-child>
+
+
+<!-- Lazy Loading -->
+<h1>Lazy Loading</h1>
+<a routerLink="blog">Blog</a>
+
+

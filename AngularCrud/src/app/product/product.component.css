@@ -1,0 +1,13 @@
+.heading{
+    background: lightgrey;
+    color:darkblue;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.buttonGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap:20px;
+}

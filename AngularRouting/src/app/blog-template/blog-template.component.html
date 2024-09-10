@@ -1,0 +1,56 @@
+<main class="form-signin w-100 m-auto" style="text-align: -webkit-center;">
+    <form style="width:30%;margin-top: 20px;" [formGroup]="createBlog" (ngSubmit)="submitBlog()">
+      <img
+        class="mb-4"
+        src="https://www.thoughtco.com/thmb/o8ytjuR8vXInybPA6OQ7SSw-cw0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Blogger.svg-57f268d63df78c690fe5d003.png"
+        alt=""
+        width="72"
+        height="57"
+      />
+      <h1 class="h3 mb-3 fw-normal">Create your Blog</h1>
+      <div class="form-floating" style="margin-bottom: 10px;">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="Enter title for Blog"
+          formControlName="title"
+        />
+        <label for="floatingInput">Title</label>
+      </div>
+      <div class="form-floating" style="margin-bottom: 10px;">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Enter description"
+          formControlName="description"
+        />
+        <label for="floatingPassword">Description</label>
+      </div>
+      <div class="form-floating" style="margin-bottom: 10px;">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingImg"
+          placeholder="Enter Image Link"
+          formControlName="image"
+        />
+        <label for="floatingImg">Image Link</label>
+      </div>
+      <div class="form-floating" style="margin-bottom: 10px;">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingBlog"
+          placeholder="Enter Blog Link"
+          formControlName="toBlog"
+        />
+        <label for="floatingBlog">Blog Link</label>
+      </div>
+  
+      <button class="btn btn-primary w-100 py-2" type="submit">Submit</button>
+      <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
+    </form>
+  </main>
+  

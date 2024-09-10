@@ -1,0 +1,51 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Adventure",
+      "description": "Kufri is a resort hill station in the district of Shimla, India. It is located 20 km from the state capital Shimla on the National Highway No. 22. O",
+      "image": "https://www.holidify.com/images/tooltipImages/MANALI.jpg",
+      "toBlog": "https://www.thrillophilia.com/cities/kufri",
+      "authorEmail": "abcd@gmail.com"
+    },
+    {
+      "id": 2,
+      "title": "Movies",
+      "description": "It is a 2023 American action film directed by Louis Leterrier from a screenplay written by Dan Mazeau and Justin Lin",
+      "image": "https://www.uphe.com/sites/default/files/styles/scale__344w_/public/2023/07/FastX_Poster%20ARt.jpg?itok=Yk6f9MLj",
+      "toBlog": "https://www.onstageblog.com/onscreenblog/fast-x-review",
+      "authorEmail": "abcd@gmail.com"
+    },
+    {
+      "id": 3,
+      "title": "Kids",
+      "description": "It is a Japanese manga series written and illustrated by Yoshito Usui.Mainly featured in Japanese Weekly comic edition",
+      "image": "https://m.media-amazon.com/images/I/51tKIR7GWYL._AC_UF894,1000_QL80_.jpg",
+      "toBlog": "https://www.stutalk.in/blog-21",
+      "authorEmail": "abcd@gmail.com"
+    },
+    {
+      "id": 4,
+      "title": "Music",
+      "description": "Jazz is a music genre that originated in the African-American communities of New Orleans, Louisiana, in the late 19th and early 20th centuries .",
+      "image": "https://daily.jstor.org/wp-content/uploads/2023/01/good_times_with_bad_music_1050x700.jpg",
+      "toBlog": "https://jazz-clubs-worldwide.com/jazz-blogs",
+      "authorEmail": "aa@gmail.com"
+    }
+
+  ],
+  "users": [
+    {
+      "name": "ABCD",
+      "email": "abcd@gmail.com",
+      "pass": "123",
+      "id": 1
+    },
+    {
+      "name": "karttekay",
+      "email": "aa@gmail.com",
+      "pass": "123",
+      "id": 2
+    }
+  ]
+}

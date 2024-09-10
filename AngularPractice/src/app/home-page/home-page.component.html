@@ -1,0 +1,95 @@
+<div class="mainContent">
+  <app-sidebar></app-sidebar>
+  <div>
+    <div class="album py-5 bg-body-tertiary">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col" *ngFor="let item of movies">
+            <div class="card shadow-sm" style="height: 525px">
+              <img
+                [src]="item.image"
+                alt=""
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="225px"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">{{ item.rating }}</p>
+                <p class="card-text">{{ item.date }}</p>
+                <h5>Star Cast</h5>
+                <div *ngFor="let cast of item.cast">
+                  <p>{{ cast }}</p>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                  <h2>Price {{ item.price }}</h2>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                      (click)="selectMovie(item)"
+                    >
+                      Book Now
+                    </button>
+
+                    <!-- Modal -->
+                    <div
+                      class="modal fade"
+                      id="exampleModal"
+                      tabindex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">
+                             Number of tickets
+                            </h1>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">
+                            <label>Tickets :- </label>
+                            <input type="text" #ticketCount/>
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-secondary"
+                              data-bs-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                            <button type="button" class="btn btn-primary" (click)="BookTicket(selectedMovie,ticketCount.value)" data-bs-dismiss="modal">
+                              Book Tickets
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-danger"
+                    (click)="cancelTicket(item.name)"
+                  >
+                    Cancel Booking
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article Component test5 1`] = `
+<div>
+  <div
+    className="App"
+  >
+    ArticleChild
+  </div>
+  <h1>
+    Hello
+  </h1>
+</div>
+`;

@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "IPhone",
+      "description": "IPhone Pro 11",
+      "price": "9999"
+    },
+    {
+      "name": "Redmi",
+      "description": "Redmi Note 10",
+      "price": "9,999",
+      "id": 2
+    },
+    {
+      "name": "Samsung",
+      "description": "Samsung Ultra Max",
+      "price": "29,999",
+      "id": 3
+    },
+    {
+      "name": "Oppo",
+      "description": "Oppo F11",
+      "price": "12,499",
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="heading">Create Product</div>
+  <div class="row mb-3">
+    <label for="inputName" class="col-sm col-form-label">Product Name</label>
+    <div class="col-sm-10">
+      <input
+        type="text"
+        class="form-control"
+        id="inputName"
+        name="Productform"
+        [(ngModel)]="formData.name"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="inputDescription" class="col-sm col-form-label"
+      >Product Description</label
+    >
+    <div class="col-sm-10">
+      <input
+        type="text"
+        class="form-control"
+        id="inputDescription"
+        name="Productform"
+        [(ngModel)]="formData.description"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="inputPrice" class="col-sm col-form-label">Product Price</label>
+    <div class="col-sm-10">
+      <input
+        type="text"
+        class="form-control"
+        id="inputPrice"
+        name="Productform"
+        [(ngModel)]="formData.price"
+      />
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Product</button>
+</form>

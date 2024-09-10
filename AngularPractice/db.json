@@ -1,0 +1,58 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "name": "Jawaan",
+      "rating": "4/5",
+      "price": 300,
+      "date": "17-7-23",
+      "image": "https://india.postsen.com/content/uploads/2023/09/02/e0898c8825.jpg",
+      "cast": [
+        "Shah Rukh Khan",
+        "Nayanthara"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Dream Girl 2",
+      "rating": "3/5",
+      "price": 200,
+      "date": "17-7-23",
+      "image": "https://assets-in.bmscdn.com/discovery-catalog/events/et00340111-hsgyvjdksx-landscape.jpg",
+      "cast": [
+        "Aayushman Khuraana",
+        "Ananya Pandey"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Gadar 2",
+      "rating": "4/5",
+      "price": 350,
+      "date": "29-7-23",
+      "image": "https://assets-in.bmscdn.com/discovery-catalog/events/et00338629-xlyrathmlr-landscape.jpg",
+      "cast": [
+        "Sunny Deol",
+        "Amisha Patel"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "name": "karttekay",
+      "email": "abcd@gmail.com",
+      "pass": "1122",
+      "accountNo": "0000111111111111111111",
+      "mobileNo": "2323232323",
+      "id": 1,
+      "movies": [
+        {
+          "MovieId": 1,
+          "name": "Jawaan",
+          "Totalprice": 900
+        }
+      ],
+      "refundAmount": 875
+    }
+  ]
+}

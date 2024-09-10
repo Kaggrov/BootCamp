@@ -1,0 +1,7 @@
+<form [formGroup]="loginform" (ngSubmit)="getDetails()">
+    <input type="text" name="login" id="" formControlName="control1">
+    <input type="password" name="pass" id="" formControlName="control2">
+    <button>Submit</button>
+</form>
+
+<p>{{user}}</p>

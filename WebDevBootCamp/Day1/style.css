@@ -1,0 +1,113 @@
+.navbar {
+  background: antiquewhite;
+  height: 3rem;
+}
+.hamb {
+  float: left;
+  margin-left: 10%;
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.2%;
+}
+
+.hamb .line {
+  width: 30px;
+  height: 3px;
+  background-color: #555;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  float: right;
+}
+.nav {
+  float: right;
+}
+.menu {
+  padding: 0;
+}
+
+.menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #555;
+}
+
+.menu li a:hover,
+.menu li a:focus {
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background-color: gray;
+  color: yellowgreen;
+}
+#toggleMenu {
+  display: none;
+}
+@media screen and (max-width: 650px) {
+  .menu {
+    display: none;
+  }
+  .hamb .line {
+    display: none;
+  }
+  .hamb::after {
+    content: "Menu";
+  }
+
+  #toggleMenu {
+    display: block;
+    .toggleMenuBar {
+        flex-direction: column;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+    .toggleMenuBar {
+        padding: 0;
+      }
+      
+      .toggleMenuBar li {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .toggleMenuBar li a {
+        display: block;
+        padding: 15px 20px;
+        text-decoration: none;
+        color: #555;
+      }
+      
+      .toggleMenuBar li a:hover,
+      .toggleMenuBar li a:focus {
+        text-decoration: none;
+      }
+      
+      .toggleMenuBar li a:hover {
+        background-color: gray;
+        color: yellowgreen;
+      }
+  }
+}

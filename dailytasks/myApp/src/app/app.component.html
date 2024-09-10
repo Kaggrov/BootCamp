@@ -1,0 +1,112 @@
+<div id="root">{{ name }}</div>
+
+<button (click)="fun()">Click Here!!</button>
+
+<div #myName></div>
+<!-- id referencing -->
+<input type="text" (keydown.enter)="printName(myName, $event)" />
+
+<div #Number>{{ value }}</div>
+<button (click)="Increment(Number)">Increment</button>
+<button (click)="Decrement(Number)">Decrement</button>
+
+<h1 *ngIf="show; else myElseBlock">I am if block</h1>
+
+<ng-template #myElseBlock>
+  <h1>I am else block</h1>
+</ng-template>
+
+<!-- Or method 2 -->
+<h1 *ngIf="show; then myIfBlock; else myElseBlock"></h1>
+
+<ng-template #myIfBlock>
+  <h1>I am If block</h1>
+</ng-template>
+
+<ng-template #myElseBlock>
+  <h1>I am else block</h1>
+</ng-template>
+
+<h1 *ngIf="color == 'green'; then green; else red"></h1>
+
+<ng-template #green>
+  <h1 style="color: green">Green color</h1>
+</ng-template>
+
+<ng-template #red>
+  <h1 style="color: red">Red Color</h1>
+</ng-template>
+
+<!-- Switch Case -->
+<div [ngSwitch]="col">
+  <h1 *ngSwitchCase="'blue'" style="color: blue">Blue Color</h1>
+  <h1 *ngSwitchCase="'green'" style="color: green">Green Color</h1>
+  <h1 *ngSwitchCase="'red'" style="color: red">Red Color</h1>
+  <h1 *ngSwitchDefault style="color: black">This is Default</h1>
+</div>
+
+<!-- Style Binding -->
+
+<div
+  [style.background-color]="myBgColor"
+  [style.color]="mycolor"
+  style="height: 100px; width: 100px"
+>
+  I am div
+</div>
+
+<button (click)="changeColor()">Change Color</button>
+
+
+<div
+  [style.display]="myDisplay"
+  style="height: 100px; width: 100px; background: bisque"
+>
+  I am div
+</div>
+
+<button (click)="changeDisplay()">Hide/Show</button><br />
+
+<!-- 2 way binding model & view  -->
+
+<input type="text" [(ngModel)]="myname" />
+<p>{{ myname }}</p>
+
+<button class="btn btn-success">Click Here</button>
+
+<!-- Form Model -->
+<form #myform="ngForm" (ngSubmit)="userLogin(myform.value)">
+  <input type="text" name="Login" ngModel />
+  <input type="password" name="pass" ngModel />
+  <button class="btn btn-success">Submit</button>
+</form>
+
+<!-- Ng FOr -->
+
+<ul>
+  <li *ngFor="let item of userDetails">
+    {{ item.name }} ------ {{ item.branch }}
+    <ul>
+      <li *ngFor="let ph of item.phone">
+        {{ ph }}
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+<!-- ReactiveForms Demo -->
+<app-reactive-demo></app-reactive-demo>
+
+
+<!-- Pipes Demo -->
+
+<h1>Pipes</h1>
+<p>{{pipeName | uppercase}}</p>
+<p>Date {{date |  date:"dd/MM/yyyy"}}</p>
+<p>Currency {{currency | currency:"USD"}}</p>
+<p>Number {{number | number:".2"}}</p>
+<p>Custom Pipe {{28 | convertToUsd:90}}</p>
+<p>{{32 | convertToF}}</p>
+<p>{{0 | convertToC}}</p>
